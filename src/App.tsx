@@ -64,19 +64,29 @@ function App() {
 
   return (
     <div className="min-h-screen bg-gray-50 dark:bg-gray-900 text-gray-900 dark:text-gray-100">
-      <ThemeToggle />
+   
 
       {view === 'home' && (
         <div className="max-w-4xl mx-auto p-4">
           <div className="flex justify-between items-center mb-6">
             <h1 className="text-3xl font-bold">Dolch Sight Words</h1>
+            <div className='flex flex-row gap-4'>
             <button
               onClick={() => setView('quiz-setup')}
-              className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+              className="hidden sm:block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
             >
               Start Quiz
             </button>
+            <ThemeToggle />
+            </div>
           </div>
+
+          <button
+              onClick={() => setView('quiz-setup')}
+              className="sm:hidden w-full px-4 py-2 mb-4 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors"
+            >
+              Start Quiz
+            </button>
           
           <div className="mb-4">
             <select
